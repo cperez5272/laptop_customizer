@@ -7,13 +7,13 @@ class Summary extends React.Component {
             style: 'currency',
             currency: 'USD'
         });
-        const total = Object.keys(this.state.selected).reduce(
-            (acc, curr) => acc + this.state.selected[curr].cost,
+        const total = Object.keys(this.props.selected).reduce(
+            (acc, curr) => acc + this.props.selected[curr].cost,
             0
         );
-        const summary = Object.keys(this.state.selected).map((feature, idx) => {
+            const summary = Object.keys(this.props.selected).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
-            const selectedOption = this.state.selected[feature];
+            const selectedOption = this.props.selected[feature];
 
             return (
                 <div className="summary__option" key={featureHash}>
